@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
@@ -16,7 +16,7 @@
           color: #000000;
     }
     #container {
-      margin: 0 auto;
+    
       width: 860px;
     }
         h1 { font-size: 40px; color: #64052a; margin-bottom: 3px; }
@@ -38,21 +38,40 @@
     #error{
         display:none;color:#f00;border:1px solid #f60;padding:5px;margin:5px;
     }
+	.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 400px;
+    height: 250px;
+
+}
+
+.flex-item {
+    width: 700px;
+    height: 500px;
+	border:1px solid #ccc;
+	margin:10px;
+	 overflow-x: hidden;
+	  overflow-y: auto;
+    
+}
     </style>
     
 </head>
 
 <body>
-  <div id="container"> 
-    <div id="error"></div>
+ <div id="error"></div>
     <input type="button" id="shuffler" value="shuffle" />
     <input type="button" id="draw" value="draw a card" />
     <input type="button" id="addCard" value="add drawn card back" />
-    <input type="button" id="shuffleDraw" value="shuffle, then draw" />
-    <h2>Card Deck</h2>
-    <div id="cardDeck"></div>
-    <h2>Your Hand</h2>
-    <div id="yourHand"></div>
+	 <h2>Card Deck</h2><h2>Draw Hand</h2>
+  <div id="container"  class="flex-container"> 
+   
+   <!-- <input type="button" id="shuffleDraw" value="shuffle, then draw" /> -->
+   
+    <div id="cardDeck" class="flex-item"></div>
+    
+    <div id="yourHand" class="flex-item"></div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/playingCards.js"></script>
     <script type="text/javascript" src="js/playingCards.ui.js"></script>
